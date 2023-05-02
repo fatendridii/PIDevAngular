@@ -1,0 +1,6 @@
+{
+    "candidatures": [
+    {"id": 1, "title": "candidature 1"}, 
+    {"id": 2, "title": "candidature 2"}, 
+    {"id": 3, "title": "candidature 3"} ]
+ }

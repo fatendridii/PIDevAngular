@@ -1,0 +1,37 @@
+
+
+<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+  <div class="card p-4 bg-light" style="border: 2px solid rgba(255, 0, 0, 0.616);">
+    <h3 class="card-title text-center mb-4">Formulaire de Candidature</h3>
+       
+        <form (ngSubmit)="onSubmit()" enctype="multipart/form-data" #f="ngForm">
+          <div class="form-group">
+            <label for="releveDeNote" class="text-black">Relevé de Note :</label><br>
+          <input type="file" class="form-control" id="releveDeNote" name="Relevé de Note" (change)="onReleveDeNoteSelected($event)" 
+          required ngModel #r="ngModel"><br>
+         </div>
+         <div class="alert alert-danger" *ngIf="r.invalid && r.touched">
+          le releve de note est obligatoire
+         </div>
+          <div class="form-group">
+          <label for="cv" class="text-black">Curriculum Vitae :</label>
+          <input type="file" class="form-control" id="cv" name="CV" (change)="onCVSelected($event)" required ngModel><br>
+          </div>
+          <div class="form-group">
+            <label for="B2F" class="text-black">B2 Francais :</label>
+            <input type="file" class="form-control" id="B2F" name="B2F" (change)="onB2FSelected($event)" required ngModel><br>
+            </div>
+            <div class="form-group">
+              <label for="B2A" class="text-black">B2 Anglais :</label>
+              <input type="file" class="form-control" id="B2A" name="B2A" (change)="onB2ASelected($event)" required ngModel><br>
+              </div>
+                       
+        <button type="submit" class="btn btn-danger btn-block mt-4" [disabled]="f.invalid" onclick="alert('votre candidature a été enregistrée avec succès')">Envoyer</button>
+         
+        </form>
+
+
+
+      
+      </div>
+    </div>
